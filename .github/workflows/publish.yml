@@ -10,6 +10,11 @@ jobs:
     runs-on: ubuntu-latest
     name: Build and Deploy
     steps:
+      - name: Use Node.js 20
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+
       - name: Checkout code
         uses: actions/checkout@v2
 
@@ -23,5 +28,5 @@ jobs:
         run: |
           git config --global user.name "Gavin White"
           git config --global user.email "gavinwhite0314@gmail.com"
-          git remote add hostinger <your-hostinger-git-repository-url>
-          git push hostinger build
+          git remote add hostinger <https://github.com/gavinwhite03/react-portfolio.git>
+          git push hostinger main
