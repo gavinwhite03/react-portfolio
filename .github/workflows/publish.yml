@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Build and Push
     steps:
-      - name: git-checkout
+      - name: Checkout code
         uses: actions/checkout@v2
 
       - name: Install all dependencies
@@ -20,7 +20,7 @@ jobs:
         run: npm run build # The build command of your project
 
       - name: Push
-        uses: s0/git-publish-subdir-action@develop
+        uses: s0/git-publish-subdir-action@v2
         env:
           REPO: self
           BRANCH: build # The branch name where you want to push the assets
