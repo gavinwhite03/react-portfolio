@@ -1,4 +1,4 @@
-import image from "C:/whats-4-dinner/whats-4-dinner/frontend/src/assets/Banner_Image.png";
+import image from "src/components/recipe-app/assets/Banner_Image.png";
 import "./Banner.css";
 
 function Banner() {
