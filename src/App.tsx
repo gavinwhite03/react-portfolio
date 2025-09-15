@@ -1,10 +1,10 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import About from "./components/About";
-import Navbar from "./components/Navbar";
-import Skills from "./components/Skills";
-import Home from "./components/home";
-import Work from "./components/Work";
-import Contact from "./components/Contact";
+import About from "./components/About.jsx";
+import Navbar from "./components/Navbar.jsx";
+import Skills from "./components/Skills.jsx";
+import Home from "./components/home.jsx";
+import Work from "./components/Work.jsx";
+import Contact from "./components/Contact.jsx";
 import RecipeHome from './components/recipe-app/Home.tsx';
 import Recipes from './components/recipe-app/Recipes.tsx';
 import RecipeDetail from './components/recipe-app/RecipeDetails.tsx';
