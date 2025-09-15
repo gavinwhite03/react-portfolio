@@ -1,4 +1,4 @@
-import image from "src/components/recipe-app/assets/Banner_Image.png";
+import image from "./assets/Banner_Image.png";
 import "./Banner.css";
 
 function Banner() {

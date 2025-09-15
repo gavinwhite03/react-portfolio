@@ -1,5 +1,5 @@
 import "./Footer.css"
-import Logo from "src/components/recipe-app/assets/What's_4_Dinner_Logo.png";
+import Logo from "./assets/What's_4_Dinner_Logo.png";
 
 function Footer() {
     return(
