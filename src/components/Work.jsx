@@ -35,6 +35,25 @@ const Work = () => {
                 </div>
 
                 {/* Grid Item 2 */}
+                <Link to="/whats-4-dinner">
+                <div
+                    style={{backgroundImage: `url(${personalFinances})`}}
+                    className='shadow-lg shadow-[#040c16] group container rounded-md flex justify-center items-center mx-auto content-div'>
+                    
+                    <div className='opacity-0 group-hover:opacity-100 text-center'>
+                    <span className='text-2xl font-bold text-white tracking-wider'>
+                        What's 4 Dinner
+                    </span>
+                    <div className='pt-8 text-center'>
+                        <button className='text-center rounded-lg px-4 py-3 m-2 bg-white text-gray-700 font-bold text-lg'>
+                        Try It Out!
+                        </button>
+                    </div>
+                    </div>
+                </div>
+                </Link>
+
+                {/* Grid Item 3 */}
                 <div
                 style={{backgroundImage: `url(${personalFinances})`}}
                 className='shadow-lg shadow-[#040c16] group container rounded-md flex justify-center items-center mx-auto content-div'>
@@ -42,17 +61,17 @@ const Work = () => {
                     {/* Hover Effects */}
                     <div className='opacity-0 group-hover:opacity-100 text-center'>
                         <span className='text-2xl font-bold text-white tracking-wider'>
-                            Python Automated Finances
+                            What's 4 Dinner
                         </span>
                         <div className='pt-8 text-center'>
-                            <a href='https://github.com/gavinwhite03/Automated-Personal-Finances'>
+                            <a href='https://github.com/gavinwhite03/whats-4-dinner'>
                                 <button className='text-center rounded-lg px-4 py-3 m-2 bg-white text-gray-700 font-bold text-lg'>Code</button>
                             </a>
                         </div>
                     </div>  
                 </div>
 
-                {/* Grid Item 2 */}
+                {/* Grid Item 4 */}
                 <div
                 style={{backgroundImage: `url(${LMS})`}}
                 className='shadow-lg shadow-[#040c16] group container rounded-md flex justify-center items-center mx-auto content-div'>
