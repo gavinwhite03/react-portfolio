@@ -10,9 +10,9 @@ function Navbar() {
         <h4>What's 4 Dinner</h4>
       </div>
       <div className="nav-links">
-        <Link to="/">Home</Link>
-        <Link to="/recipes">Recipes</Link>
-        <Link to="/pantry">Pantry</Link>
+        <Link to="/whats-4-dinner">Home</Link>
+        <Link to="/whats-4-dinner/recipes">Recipes</Link>
+        <Link to="/whats-4-dinner/pantry">Pantry</Link>
       </div>
     </nav>
   );

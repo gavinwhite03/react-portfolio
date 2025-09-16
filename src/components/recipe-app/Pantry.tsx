@@ -45,7 +45,7 @@ function Pantry() {
     try {
       setLoading(true);
       const response = await fetch(
-        `https://api.spoonacular.com/food/ingredients/search?query=${query}&number=20&apiKey=${import.meta.env.VITE_SPOONACULAR_KEY}`
+        `https://api.spoonacular.com/food/ingredients/search?query=${query}&number=20&apiKey=${process.env.REACT_APP_SPOONACULAR_KEY}`
       );
       const data = await response.json();
       setSearchResults(data.results || []);

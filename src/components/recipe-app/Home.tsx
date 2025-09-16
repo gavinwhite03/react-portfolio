@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import "./Home.css";
 
-function Home() {
+function RecipeHome() {
   return (
     <div className="home">
       <section className="intro">
@@ -10,10 +10,10 @@ function Home() {
       </section>
 
       <section className="actions">
-        <Link to="/pantry" className="card">
+        <Link to="/whats-4-dinner/pantry" className="card">
           <h3>Add Ingredients to Your Pantry</h3>
         </Link>
-        <Link to="/recipes" className="card">
+        <Link to="/whats-4-dinner/recipes" className="card">
           <h3>Find Recipes</h3>
         </Link>
       </section>
@@ -21,4 +21,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default RecipeHome;

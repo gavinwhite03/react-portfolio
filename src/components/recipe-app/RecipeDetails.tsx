@@ -116,12 +116,12 @@ function RecipeDetail() {
       const [recipeResponse, nutritionResponse] = await Promise.all([
         fetch(
           `https://api.spoonacular.com/recipes/${recipeId}/information?apiKey=${
-            import.meta.env.VITE_SPOONACULAR_KEY
+            process.env.REACT_APP_SPOONACULAR_KEY
           }&includeNutrition=true`
         ),
         fetch(
           `https://api.spoonacular.com/recipes/${recipeId}/nutritionWidget.json?apiKey=${
-            import.meta.env.VITE_SPOONACULAR_KEY
+            process.env.REACT_APP_SPOONACULAR_KEY
           }`
         )
       ]);
@@ -191,16 +191,16 @@ function RecipeDetail() {
             <h1>{recipe.title}</h1>
             <div className="recipe-meta">
               <span className="meta-item">
-                <strong>⏱️ {recipe.readyInMinutes}</strong> minutes
+                <strong>{recipe.readyInMinutes}</strong> minutes
               </span>
               <span className="meta-item">
-                <strong>👥 {recipe.servings}</strong> servings
+                <strong>{recipe.servings}</strong> servings
               </span>
               <span className="meta-item">
-                <strong>❤️ {recipe.aggregateLikes}</strong> likes
+                <strong>{recipe.aggregateLikes}</strong> likes
               </span>
               <span className="meta-item">
-                <strong>📊 {Math.round(recipe.spoonacularScore)}</strong> score
+                <strong>{Math.round(recipe.spoonacularScore)}</strong> score
               </span>
             </div>
             

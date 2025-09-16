@@ -40,10 +40,18 @@ function Recipes() {
     params.append('query', query);
     params.append('number', '6');
     params.append('addRecipeInformation', 'true');
-    params.append('apiKey', import.meta.env.VITE_SPOONACULAR_KEY);
+    
+    // Fix the TypeScript error by providing a fallback
+    const apiKey = process.env.REACT_APP_SPOONACULAR_KEY;
+    console.log("API KEY:", apiKey);
+    if (!apiKey) {
+      console.error('REACT_APP_SPOONACULAR_KEY environment variable is not set');
+      return params.toString();
+    }
+    params.append('apiKey', apiKey);
 
     // Add diet filters
-    const dietFilters = [];
+    const dietFilters: string[] = [];
     if (filters.lowFat) dietFilters.push('low fat');
     if (filters.lowCalorie) dietFilters.push('low calorie');
     
@@ -67,10 +75,14 @@ function Recipes() {
       // Get pantry ingredients from localStorage
       const savedPantry = localStorage.getItem('pantryItems');
       if (savedPantry) {
-        const pantryItems = JSON.parse(savedPantry);
-        const pantryIngredients = pantryItems.map((item: any) => item.name);
-        if (pantryIngredients.length > 0) {
-          params.append('includeIngredients', pantryIngredients.join(','));
+        try {
+          const pantryItems = JSON.parse(savedPantry);
+          const pantryIngredients = pantryItems.map((item: any) => item.name);
+          if (pantryIngredients.length > 0) {
+            params.append('includeIngredients', pantryIngredients.join(','));
+          }
+        } catch (error) {
+          console.error('Error parsing pantry items from localStorage:', error);
         }
       }
     }
@@ -85,10 +97,16 @@ function Recipes() {
       const res = await fetch(
         `https://api.spoonacular.com/recipes/complexSearch?${queryParams}`
       );
+      
+      if (!res.ok) {
+        throw new Error(`HTTP error! status: ${res.status}`);
+      }
+      
       const data = await res.json();
       setRecipes(data.results || []);
     } catch (err) {
       console.error("Failed to fetch recipes:", err);
+      setRecipes([]);
     } finally {
       setLoading(false);
     }
@@ -200,7 +218,7 @@ function Recipes() {
             <img src={recipe.image} alt={recipe.title} />
             <h2>{recipe.title}</h2>
             <p>{recipe.summary?.replace(/<[^>]+>/g, "").slice(0, 100)}...</p>
-            <Link to={`/recipes/${recipe.id}`} className="view-btn">
+            <Link to={`/whats-4-dinner/recipes/${recipe.id}`} className="view-btn">
               View Recipe
             </Link>
           </div>
