@@ -1,4 +1,6 @@
 .footer {
+    position: fixed;
+    bottom: 0;
     align-items: left;
     color: black;
     background-color: #FFDB63;
@@ -17,4 +19,6 @@
 
 .heading1 {
     font-family: sans-serif "Raleway";
+    font-size: 2rem;
+    margin-top: 5px;
 }

@@ -2,6 +2,8 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 import premScraping from '../assests/premScraping.png'
 import personalFinances from '../assests/personalFinances.png'
+import whats4dinnerTEST from '../assests/card-img.png'
+import whats4dinnerCODE from '../assests/card-img-code.png'
 import LMS from '../assests/LMS.png'
 
 const Work = () => {
@@ -38,7 +40,7 @@ const Work = () => {
                 {/* Grid Item 2 */}
                 <Link to="/whats-4-dinner">
                 <div
-                    style={{backgroundImage: `url(${personalFinances})`}}
+                    style={{backgroundImage: `url(${whats4dinnerTEST})`}}
                     className='shadow-lg shadow-[#040c16] group container rounded-md flex justify-center items-center mx-auto content-div'>
                     
                     <div className='opacity-0 group-hover:opacity-100 text-center'>
@@ -56,7 +58,7 @@ const Work = () => {
 
                 {/* Grid Item 3 */}
                 <div
-                style={{backgroundImage: `url(${personalFinances})`}}
+                style={{backgroundImage: `url(${whats4dinnerCODE})`}}
                 className='shadow-lg shadow-[#040c16] group container rounded-md flex justify-center items-center mx-auto content-div'>
                     
                     {/* Hover Effects */}
